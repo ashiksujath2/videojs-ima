@@ -18,9 +18,10 @@
   <head>
     <title>Video.js Test</title>
     <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../third_party/videojs-ads/videojs.ads.css" />
+    <link rel="stylesheet" href="../../node_modules/videojs-contrib-ads/src/videojs.ads.css" />
     <link rel="stylesheet" href="../../src/videojs.ima.css" />
     <link rel="stylesheet" href="../style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -30,10 +31,30 @@
       <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4"
           type="video/mp4" ></source>
     </video>
+    <div id="SdkIntegration"></div>
     <script src="//vjs.zencdn.net/4.12/video.js"></script>
     <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-    <script src="../../third_party/videojs-ads/videojs.ads.js"></script>
+    <script src="../../node_modules/videojs-contrib-ads/src/videojs.ads.js"></script>
     <script src="../../src/videojs.ima.js"></script>
+    <script type="text/javascript">
+      var flashvars = {};
+      var params = {
+        allowScriptAccess: "always",
+        allowFullScreen: "true"
+      };
+      var attributes = {};
+      var expressInstallSwfUrl;
+      var minimalFlashVersion = "10.0.0";
+      swfobject.embedSWF("VideoJSFlash.swf",
+                         "SdkIntegration",
+                         "650",
+                         "600",
+                         minimalFlashVersion,
+                         expressInstallSwfUrl,
+                         flashvars,
+                         params,
+                         attributes);
+    </script>
     <script src="ads.js"></script>
   </body>
 </html>
