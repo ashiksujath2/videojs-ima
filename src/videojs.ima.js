@@ -233,7 +233,6 @@
      * @ignore
      */
     player.ima.onAdError_ = function(adErrorEvent) {
-      window.console.log('Ad error: ' + adErrorEvent.getError());
       adsManager.destroy();
       adContainerDiv.style.display = 'none';
       player.trigger('adserror');

@@ -16,11 +16,21 @@
 
 <html>
   <head>
-    <title>Video.js Test</title>
+    <title>Video.js xTest</title>
+    <style type="text/css">
+      .hide {
+        display: none;
+      }
+    </style>
     <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
     <link rel="stylesheet" href="../../node_modules/videojs-contrib-ads/src/videojs.ads.css" />
     <link rel="stylesheet" href="../../src/videojs.ima.css" />
     <link rel="stylesheet" href="../style.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+    <script type="text/javascript">
+    // (function($){if(typeof $.browser==="undefined"||!$.browser){var browser={};$.extend(browser);}var pluginList={flash:{activex:"ShockwaveFlash.ShockwaveFlash",plugin:/flash/gim},sl:{activex:["AgControl.AgControl"],plugin:/silverlight/gim},pdf:{activex:"PDF.PdfCtrl",plugin:/adobe\s?acrobat/gim},qtime:{activex:"QuickTime.QuickTime",plugin:/quicktime/gim},wmp:{activex:"WMPlayer.OCX",plugin:/(windows\smedia)|(Microsoft)/gim},shk:{activex:"SWCtl.SWCtl",plugin:/shockwave/gim},rp:{activex:"RealPlayer",plugin:/realplayer/gim},java:{activex:navigator.javaEnabled(),plugin:/java/gim}};var isSupported=function(p){if(window.ActiveXObject){try{new ActiveXObject(pluginList[p].activex);$.browser[p]=true;}catch(e){$.browser[p]=false;}}else{$.each(navigator.plugins,function(){if(this.name.match(pluginList[p].plugin)){$.browser[p]=true;return false;}else{$.browser[p]=false;}});}};$.each(pluginList,function(i,n){isSupported(i);});})(jQuery);
+    </script>
     <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
   </head>
 
@@ -31,7 +41,9 @@
       <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4"
           type="video/mp4" ></source>
     </video>
-    <div id="SdkIntegration"></div>
+    <div id="SdkIntegrationWrapper">
+      <div id="SdkIntegration"></div>
+    </div>
     <script src="//vjs.zencdn.net/4.12/video.js"></script>
     <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
     <script src="../../node_modules/videojs-contrib-ads/src/videojs.ads.js"></script>
